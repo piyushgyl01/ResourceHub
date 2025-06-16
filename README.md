@@ -42,7 +42,7 @@ npm run dev
 * **Deployment**: Vercel (Frontend), Render (Backend)
 
 ## **Demo Video**
-*Coming soon - comprehensive walkthrough of all features including team management, project tracking, and analytics.*
+Watch a walkthrough (7 minutes) of all major features of this app: [Video Link](https://youtu.be/zx37Y3YBYgI)
 
 ## **Features**
 
@@ -126,8 +126,6 @@ Sample Response: `{ utilizationData: [{ engineerId, name, utilizationPercentage,
 
 ## **Contact**
 
-For questions, feature requests, or collaboration opportunities, please reach out:
-- **GitHub**: [piyushgyl01](https://github.com/piyushgyl01)
-- **Project Repository**: [erm-fullstack](https://github.com/piyushgyl01/erm-fullstack)
+For bugs or feature requests, please reach out to piyush2022ug@gmail.com
 
 *Built with ❤️ and 🤖 AI assistance for accelerated learning and development*

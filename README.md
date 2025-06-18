@@ -42,7 +42,7 @@ npm run dev
 * **Deployment**: Vercel (Frontend), Render (Backend)
 
 ## **Demo Video**
-Watch a walkthrough (7 minutes) of all major features of this app: [Video Link](https://youtu.be/zx37Y3YBYgI)
+Watch a walkthrough (5 minutes) of all major features of this app: [Video Link](https://youtu.be/ieuyr1FEawk)
 
 ## **Features**
 

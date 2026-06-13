@@ -82,7 +82,7 @@ interface AuthResponse {
 // Create an axios instance with default configuration
 const api = axios.create({
   baseURL:
-    import.meta.env.VITE_API_URL || "https://erm-server-v1.onrender.com/api",
+    import.meta.env.VITE_API_URL || "http://localhost:3004/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -189,6 +189,7 @@ export const authService = {
     return !!localStorage.getItem("auth_token");
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);
@@ -226,6 +227,7 @@ export const engineerService = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);
@@ -299,6 +301,7 @@ export const projectService = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);
@@ -360,6 +363,7 @@ export const assignmentService = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);
@@ -381,6 +385,7 @@ export const analyticsService = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);
@@ -400,6 +405,7 @@ export const devService = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.error) {
       return new Error(error.response.data.error);

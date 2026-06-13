@@ -321,11 +321,13 @@ const AnalyticsPage: React.FC = () => {
    * Custom Tooltip Components for Enhanced User Experience
    * These provide rich context when users hover over chart elements
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-white p-3 border rounded-lg shadow-lg">
           <p className="font-medium">{label}</p>
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {payload.map((entry: any, index: number) => (
             <p key={index} style={{ color: entry.color }}>
               {`${entry.dataKey}: ${entry.value}${

@@ -148,7 +148,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           // Verify the stored token is still valid by fetching user profile
           const { user } = await authService.getProfile();
           dispatch({ type: "LOAD_USER_SUCCESS", payload: user });
-        } catch (error) {
+        } catch {
           // Token is invalid or expired - clear stored auth data
           authService.logout();
           dispatch({

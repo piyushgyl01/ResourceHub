@@ -232,6 +232,7 @@ const ProfilePage: React.FC = () => {
                         <Select
                           defaultValue={authState.user?.seniority}
                           onValueChange={(value) =>
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             setValue("seniority", value as any)
                           }
                         >

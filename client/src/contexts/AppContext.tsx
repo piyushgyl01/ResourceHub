@@ -324,12 +324,13 @@ function appReducer(state: AppState, action: AppAction): AppState {
       };
 
     // Utility actions
-    case "CLEAR_ERROR":
+    case "CLEAR_ERROR": {
       const { payload: errorType } = action;
       return {
         ...state,
         [`${errorType}Error`]: null,
       };
+    }
 
     case "RESET_STATE":
       return initialState;
@@ -503,6 +504,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   );
 
   const updateAssignment = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async (id: string, assignmentData: any): Promise<void> => {
       dispatch({ type: "UPDATE_ASSIGNMENT_START" });
 
@@ -564,17 +566,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   }, []);
 
   // Utility methods
-  const createSeedData = useCallback(async (): Promise<void> => {
-    try {
-      await devService.createSeedData();
-      // Refresh all data after creating seed data
-      await refreshAllData();
-    } catch (error) {
-      console.error("Failed to create seed data:", error);
-      throw error;
-    }
-  }, []);
-
   const clearError = useCallback((errorType: string): void => {
     dispatch({ type: "CLEAR_ERROR", payload: errorType });
   }, []);
@@ -591,6 +582,17 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       }),
     ]);
   }, [loadEngineers, loadProjects, loadAssignments, loadAnalytics]);
+
+  const createSeedData = useCallback(async (): Promise<void> => {
+    try {
+      await devService.createSeedData();
+      // Refresh all data after creating seed data
+      await refreshAllData();
+    } catch (error) {
+      console.error("Failed to create seed data:", error);
+      throw error;
+    }
+  }, [refreshAllData]);
 
   // Create the context value object
   const contextValue: AppContextType = {

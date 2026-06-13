@@ -295,6 +295,7 @@ export function validatePassword(password: string): {
  * Debounces a function call to limit how often it can be executed
  * Useful for search inputs and API calls to improve performance
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   delay: number

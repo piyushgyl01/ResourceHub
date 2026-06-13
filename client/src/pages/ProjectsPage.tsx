@@ -438,6 +438,7 @@ const ProjectsPage: React.FC = () => {
                     <Select
                       defaultValue="planning"
                       onValueChange={(value) =>
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         setValue("status", value as any)
                       }
                     >
@@ -629,6 +630,7 @@ const ProjectsPage: React.FC = () => {
                     <Select
                       defaultValue={editingProject?.status}
                       onValueChange={(value) =>
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         setValue("status", value as any)
                       }
                     >
